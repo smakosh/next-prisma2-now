@@ -1,43 +1,47 @@
 import React from "react";
 import Head from "next/head";
-import { Photon } from "@prisma/photon";
+import Link from "next/link";
+import { PrismaClient } from "@prisma/client";
 
-export async function unstable_getStaticProps() {
-	try {
-		const photon = new Photon();
+export const getStaticProps = async () => {
+  try {
+    const prisma = new PrismaClient();
 
-		const users = await photon.users();
+    const users = await prisma.user.findMany();
 
-		return {
-			props: {
-				users
-			}
-		};
-	} catch (err) {
-		console.log(err);
-	}
-}
+    return {
+      props: {
+        users,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const Home = ({ users }) => (
-	<div>
-		<Head>
-			<title>Home</title>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-		<div>
-			{users &&
-				users.map(({ id, email, name }) => (
-					<ul key={id}>
-						<li>
-							<h1>{name}</h1>
-						</li>
-						<li>
-							Email: <strong>{email}</strong>
-						</li>
-					</ul>
-				))}
-		</div>
-	</div>
+  <div>
+    <Head>
+      <title>Home</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <div>
+      {users &&
+        users.map(({ id, email, name }) => (
+          <ul key={id}>
+            <li>
+              <h1>{name}</h1>
+            </li>
+            <li>
+              Email: <strong>{email}</strong>
+            </li>
+          </ul>
+        ))}
+      <Link href="/posts" as="/posts">
+        <a>Go to Posts page</a>
+      </Link>
+    </div>
+  </div>
 );
 
 export default Home;

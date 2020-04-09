@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "BASE_URL_PRISMA_EXAMPLE": "@base_url_prisma_example"
+    }
+  }
+}

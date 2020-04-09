@@ -924,10 +924,15 @@
   resolved "https://registry.yarnpkg.com/@next/polyfill-nomodule/-/polyfill-nomodule-9.3.2.tgz#f8e282fdeb448eb6b70bcc18c5d46c911072687a"
   integrity sha512-kEa7v3trZmW6iWeTJrhg+ZsE9njae7mLkgyZB5M1r975JHr5PQ69B5aX7hrEAj7aAJYvCKETgAczx4gGR8MOzQ==
 
-"@prisma/photon@^2.0.0-preview019":
-  version "2.0.0-preview019"
-  resolved "https://registry.yarnpkg.com/@prisma/photon/-/photon-2.0.0-preview019.tgz#cd083628f668fbdc4ab8f7d15cd8a33b83a997a3"
-  integrity sha512-fAqVbg2nxzk2B5h6Z6BgsApD3iRbWGMDKTsa8WDtH3fsrZc07HbGGc9HM5kNYUAPAKYSWJCr7no2W+c8Q87sRQ==
+"@prisma/cli@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.0.0-beta.2.tgz#5252cbe458fd7de479a6697ab5cffd1659a5762c"
+  integrity sha512-lD0cv/YC4g4SKByxH3hvzX1oS9cjRdCDU1Sh2inATaKcTHWPlxxgXQW4yYU2FF/HSWR9KK6YMAdO3ShkOl1PEQ==
+
+"@prisma/client@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.0.0-beta.2.tgz#dd7b357f65e8100cd6cc1b610d848b72217640bb"
+  integrity sha512-VhNYeeGTrFfLjB/JL7XPoWpxSTCb+YV+F3ggR1X0CGa4b/u6Kxy65aElLozs+yFdMQPVNkyg2PwUO8xQ7G9fpg==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -2333,6 +2338,11 @@ dot-prop@^5.0.0:
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -4893,11 +4903,6 @@ prepend-http@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
-
-prisma2@^2.0.0-preview019:
-  version "2.0.0-preview019"
-  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview019.tgz#d0d2bafad041071fa59400eb04e41b21de68aac6"
-  integrity sha512-G/+3ZqcEfO0Sn93Z8BoErIXLhMI7xKMOhfbLeNjso7/n3o4MiRmjO5sS3dFkxHc/VBlyTjJFtNyMOsgAkiP6ng==
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
