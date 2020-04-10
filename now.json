@@ -4,5 +4,8 @@
       "BASE_URL_PRISMA_EXAMPLE": "@base_url_prisma_example",
       "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url"
     }
+  },
+  "env": {
+    "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url"
   }
 }
