@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Error from "next/error";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import PostForm from "../components/PostForm";
@@ -9,7 +8,6 @@ import useFetchUser from "../hooks/useFetchUser";
 
 const Add: NextPage = () => {
   const { user, loading } = useFetchUser({ required: true });
-  const router = useRouter();
 
   return (
     <Layout user={user} loading={loading}>

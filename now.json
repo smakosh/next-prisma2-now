@@ -20,8 +20,5 @@
       "POST_LOGOUT_REDIRECT_URI": "@base_url_prisma_example",
       "SESSION_COOKIE_SECRET": "@prisma_example_session_cookie_secret"
     }
-  },
-  "env": {
-    "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url"
   }
 }

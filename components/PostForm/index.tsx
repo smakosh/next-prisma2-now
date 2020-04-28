@@ -17,10 +17,11 @@ export default () => {
       })}
       onSubmit={async ({ title, content }, { setSubmitting }) => {
         try {
-          await axios.post(
-            `${process.env.BASE_URL_PRISMA_EXAMPLE}/api/create`,
-            { title, content, authorId: 1 }
-          );
+          await axios.post(`${process.env.BASE_URL_PRISMA_EXAMPLE}api/create`, {
+            title,
+            content,
+            authorId: 1,
+          });
           router.push("/");
         } catch (err) {
           setSubmitting(false);

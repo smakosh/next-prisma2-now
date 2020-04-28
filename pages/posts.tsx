@@ -6,7 +6,7 @@ import useFetchUser from "../hooks/useFetchUser";
 import Layout from "../components/Layout";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`${process.env.BASE_URL_PRISMA_EXAMPLE}/api/posts`);
+  const res = await fetch(`${process.env.BASE_URL_PRISMA_EXAMPLE}api/posts`);
   const posts = await res.json();
 
   return {
@@ -36,12 +36,12 @@ const Posts: NextPage<{
           margin: "0 auto",
         }}
       >
-        {posts &&
-          posts.map(({ id, title, content, Tag }) => (
-            <ul key={id}>
-              <li>
-                <h1>{title}</h1>
-                {Tag.map(({ id, name }) => (
+        {posts.map(({ id, title, content, Tag }) => (
+          <ul key={id}>
+            <li>
+              <h1>{title}</h1>
+              {Tag?.length > 0 &&
+                Tag.map(({ id, name }) => (
                   <span
                     key={id}
                     style={{
@@ -54,12 +54,12 @@ const Posts: NextPage<{
                     {name}
                   </span>
                 ))}
-              </li>
-              <li>
-                <div dangerouslySetInnerHTML={{ __html: content }} />
-              </li>
-            </ul>
-          ))}
+            </li>
+            <li>
+              <div dangerouslySetInnerHTML={{ __html: content }} />
+            </li>
+          </ul>
+        ))}
         {!loading && user && (
           <div>
             <Link href="/add/" as="/add/">
