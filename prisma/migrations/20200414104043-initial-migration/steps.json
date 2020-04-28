@@ -30,45 +30,16 @@
     {
       "tag": "CreateField",
       "model": "Post",
-      "field": "id",
+      "field": "authorId",
       "type": "Int",
       "arity": "Required"
     },
     {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "Post",
-          "field": "id"
-        },
-        "directive": "default"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "Post",
-          "field": "id"
-        },
-        "directive": "default"
-      },
-      "argument": "",
-      "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "Post",
-          "field": "id"
-        },
-        "directive": "id"
-      }
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "content",
+      "type": "String",
+      "arity": "Optional"
     },
     {
       "tag": "CreateField",
@@ -105,16 +76,45 @@
     {
       "tag": "CreateField",
       "model": "Post",
-      "field": "title",
-      "type": "String",
+      "field": "id",
+      "type": "Int",
       "arity": "Required"
     },
     {
-      "tag": "CreateField",
-      "model": "Post",
-      "field": "content",
-      "type": "String",
-      "arity": "Optional"
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "id"
+        },
+        "directive": "id"
+      }
     },
     {
       "tag": "CreateField",
@@ -151,7 +151,14 @@
     {
       "tag": "CreateField",
       "model": "Post",
-      "field": "author",
+      "field": "title",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "User",
       "type": "User",
       "arity": "Required"
     },
@@ -161,7 +168,7 @@
         "path": {
           "tag": "Field",
           "model": "Post",
-          "field": "author"
+          "field": "User"
         },
         "directive": "relation"
       }
@@ -173,7 +180,7 @@
         "path": {
           "tag": "Field",
           "model": "Post",
-          "field": "author"
+          "field": "User"
         },
         "directive": "relation"
       },
@@ -187,7 +194,7 @@
         "path": {
           "tag": "Field",
           "model": "Post",
-          "field": "author"
+          "field": "User"
         },
         "directive": "relation"
       },
@@ -197,13 +204,20 @@
     {
       "tag": "CreateField",
       "model": "Post",
-      "field": "authorId",
-      "type": "Int",
-      "arity": "Required"
+      "field": "Tag",
+      "type": "Tag",
+      "arity": "List"
     },
     {
       "tag": "CreateModel",
       "model": "Profile"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "bio",
+      "type": "String",
+      "arity": "Optional"
     },
     {
       "tag": "CreateField",
@@ -247,59 +261,6 @@
         },
         "directive": "id"
       }
-    },
-    {
-      "tag": "CreateField",
-      "model": "Profile",
-      "field": "bio",
-      "type": "String",
-      "arity": "Optional"
-    },
-    {
-      "tag": "CreateField",
-      "model": "Profile",
-      "field": "user",
-      "type": "User",
-      "arity": "Required"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "Profile",
-          "field": "user"
-        },
-        "directive": "relation"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "Profile",
-          "field": "user"
-        },
-        "directive": "relation"
-      },
-      "argument": "fields",
-      "value": "[userId]"
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "Profile",
-          "field": "user"
-        },
-        "directive": "relation"
-      },
-      "argument": "references",
-      "value": "[id]"
     },
     {
       "tag": "CreateField",
@@ -320,12 +281,58 @@
       }
     },
     {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "User",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "User"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "User"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[userId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "User"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
       "tag": "CreateModel",
-      "model": "User"
+      "model": "Tag"
     },
     {
       "tag": "CreateField",
-      "model": "User",
+      "model": "Tag",
       "field": "id",
       "type": "Int",
       "arity": "Required"
@@ -335,7 +342,7 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "User",
+          "model": "Tag",
           "field": "id"
         },
         "directive": "default"
@@ -347,7 +354,7 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "User",
+          "model": "Tag",
           "field": "id"
         },
         "directive": "default"
@@ -360,11 +367,75 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "User",
+          "model": "Tag",
           "field": "id"
         },
         "directive": "id"
       }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Tag",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Tag",
+      "field": "postId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Tag",
+      "field": "Post",
+      "type": "Post",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Tag",
+          "field": "Post"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Tag",
+          "field": "Post"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[postId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Tag",
+          "field": "Post"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "User"
     },
     {
       "tag": "CreateField",
@@ -387,6 +458,49 @@
     {
       "tag": "CreateField",
       "model": "User",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
       "field": "name",
       "type": "String",
       "arity": "Optional"
@@ -394,14 +508,14 @@
     {
       "tag": "CreateField",
       "model": "User",
-      "field": "posts",
+      "field": "Post",
       "type": "Post",
       "arity": "List"
     },
     {
       "tag": "CreateField",
       "model": "User",
-      "field": "profile",
+      "field": "Profile",
       "type": "Profile",
       "arity": "Optional"
     }
