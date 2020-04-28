@@ -10,6 +10,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = await res.json();
 
   return {
+    revalidate: 2,
     props: { posts },
   };
 };
