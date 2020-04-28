@@ -1,8 +1,24 @@
 {
+  "env": {
+    "BASE_URL_PRISMA_EXAMPLE": "@base_url_prisma_example",
+    "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url",
+    "AUTH0_DOMAIN": "@prisma_example_auth0_url",
+    "AUTH0_CLIENT_ID": "@prisma_example_auth0_client_id",
+    "AUTH0_CLIENT_SECRET": "@prisma_example_auth0_client_secret",
+    "REDIRECT_URI": "@prisma_example_redirect_uri",
+    "POST_LOGOUT_REDIRECT_URI": "@base_url_prisma_example",
+    "SESSION_COOKIE_SECRET": "@prisma_example_session_cookie_secret"
+  },
   "build": {
     "env": {
       "BASE_URL_PRISMA_EXAMPLE": "@base_url_prisma_example",
-      "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url"
+      "PRISMA_EXAMPLE_DATABASE_URL": "@prisma_example_database_url",
+      "AUTH0_DOMAIN": "@prisma_example_auth0_url",
+      "AUTH0_CLIENT_ID": "@prisma_example_auth0_client_id",
+      "AUTH0_CLIENT_SECRET": "@prisma_example_auth0_client_secret",
+      "REDIRECT_URI": "@prisma_example_redirect_uri",
+      "POST_LOGOUT_REDIRECT_URI": "@base_url_prisma_example",
+      "SESSION_COOKIE_SECRET": "@prisma_example_session_cookie_secret"
     }
   }
 }
