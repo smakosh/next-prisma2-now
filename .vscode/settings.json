@@ -1,3 +1,4 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "prisma.plugin.nextjs.hasPrompted": true,
 }

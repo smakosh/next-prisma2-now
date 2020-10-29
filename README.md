@@ -1,4 +1,4 @@
-## Next + Prisma 2 + Now
+## Next + Prisma 2 + Vercel
 
 Example using Next and Prisma
 
