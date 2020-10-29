@@ -4,29 +4,29 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("PRISMA_EXAMPLE_DATABASE_URL")
+  url = "***"
 }
 
 model Post {
   id        Int      @id @default(autoincrement())
-  authorId  Int?
+  authorId  Int
   content   String?
   createdAt DateTime @default(now())
   published Boolean  @default(false)
   title     String
-  author    User?    @relation(fields: [authorId], references: [id])
-  Tag       Tag[]
+  User      User     @relation(fields: [authorId], references: [id])
+  tags      Tag[]
 }
 
 model Tag {
-  id   Int    @id @default(autoincrement())
-  name String
-  Post Post[]
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
   email String  @unique
+  id    Int     @id @default(autoincrement())
   name  String?
   posts Post[]
 }

@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Error from "next/error";
 import Head from "next/head";
 import Link from "next/link";
@@ -6,7 +5,7 @@ import PostForm from "../components/PostForm";
 import Layout from "../components/Layout";
 import useFetchUser from "../hooks/useFetchUser";
 
-const Add: NextPage = () => {
+const Add = () => {
   const { user, loading } = useFetchUser({ required: true });
 
   return (
@@ -25,7 +24,7 @@ const Add: NextPage = () => {
             }}
           >
             <PostForm />
-            <Link href="/posts" as="/posts">
+            <Link href="/posts">
               <a>Go to Posts page</a>
             </Link>
           </div>
